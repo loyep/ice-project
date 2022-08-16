@@ -22,7 +22,7 @@ export default function Home() {
       <header className={styles.appHeader}>
         <img src={logo} alt="logo" className={styles.logo} />
         <p className={styles.title}>
-          Hello ICE 311
+          Hello ICE 3
 
           Date: {data?.date}
         </p>
