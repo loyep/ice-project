@@ -1,8 +1,8 @@
 import express from 'express';
 const app = express();
 
-const port = Number(options.port || process.env.PORT || '3000')
-import * as ice from '../public/server/index'
+const port = Number(process.env.PORT || '3000')
+import * as ice from '../public/server/index.mjs'
 
 app.use(async (req, res, next) => {
   //   if (req.path.match(/([0-9]+|umi)\.js/)) {
@@ -36,7 +36,7 @@ app.use(async (req, res, next) => {
 });
 
 // Umi static files (including SSG pages)
-app.use(express.static('../public'));
+app.use(express.static('public'));
 
 // Start server
 app.listen(port, () => {
