@@ -1,3 +1,3 @@
-import { bootstrap } from '../src/server';
+import { bootstrap } from '../server';
 
 bootstrap();
