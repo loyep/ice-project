@@ -2,7 +2,7 @@ import express from 'express';
 const app = express();
 
 const port = Number(options.port || process.env.PORT || '3000')
-import * as ice from '../server/index.mjs'
+import * as ice from '../build/server/index'
 
 app.use(async (req, res, next) => {
   //   if (req.path.match(/([0-9]+|umi)\.js/)) {
