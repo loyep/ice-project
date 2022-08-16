@@ -36,7 +36,7 @@ app.use(async (req, res, next) => {
 });
 
 // Umi static files (including SSG pages)
-app.use(express.static('build'));
+app.use(express.static('../build'));
 
 // Start server
 app.listen(port, () => {
