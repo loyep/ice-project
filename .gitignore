@@ -24,4 +24,3 @@ yarn-error.log*
 index.module.scss.d.ts
 .faas_debug_tmp
 .severless
-yarn.lock
