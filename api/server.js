@@ -1,6 +1,7 @@
 import express from 'express';
 const app = express();
-const port = 3010;
+
+const port = Number(options.port || process.env.PORT || '3000')
 import * as ice from '../build/server/index.mjs'
 
 app.use(async (req, res, next) => {
