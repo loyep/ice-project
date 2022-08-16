@@ -1,8 +1,20 @@
 import express from "express";
-import * as ice from "./public/server/index.mjs";
+import { createRequire } from "module";
+import path from 'path'
+
+const require = createRequire(import.meta.url);
 
 export async function bootstrap() {
   const app = express();
+
+  const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+
+  let ice
+  try {
+    ice = await import(path.join(__dirname, "./public/server/index.mjs"));
+  } catch (error) {
+    ice = require(path.join(__dirname, "./public/server/index.mjs"));
+  }
 
   const port = Number(process.env.PORT || "3000");
 
@@ -10,6 +22,12 @@ export async function bootstrap() {
     //   if (req.path.match(/([0-9]+|umi)\.js/)) {
     // await new Promise(resolve => setTimeout(resolve, 1000));
     //   }
+    next();
+  });
+
+  // Logger middleware
+  app.use((req, res, next) => {
+    console.info(`${req.method} ${req.url}`);
     next();
   });
 
@@ -26,6 +44,7 @@ export async function bootstrap() {
         req,
         res,
       });
+      console.log(markup)
       // next()
     } catch (error) {
       next(error);
