@@ -1,5 +1,5 @@
 import express from "express";
-import * as ice from "../public/server/index.mjs";
+import * as ice from "./server/index.mjs";
 
 export async function bootstrap() {
   const app = express();
@@ -32,6 +32,7 @@ export async function bootstrap() {
         req,
         res,
       });
+      console.log(markup)
       // next()
     } catch (error) {
       next(error);
