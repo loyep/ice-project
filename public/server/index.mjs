@@ -13,7 +13,7 @@ import {
 
 // .ice/entry.server.ts
 init_react();
-var import_regenerator_runtime = __toESM(require_runtime());
+var import_regenerator_runtime = __toESM(require_runtime(), 1);
 
 // .ice/env.server.ts
 init_react();
@@ -100,7 +100,7 @@ var routes_default = [
     load: function() {
       return import(
         /* webpackChunkName: "index" */
-        "./pages-Y3A2WUA7.mjs"
+        "./pages-7QWLKU5G.mjs"
       );
     },
     componentName: "index",

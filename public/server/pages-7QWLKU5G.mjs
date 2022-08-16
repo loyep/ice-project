@@ -100,7 +100,7 @@ function Home() {
           /* @__PURE__ */ _jsxs("p", {
             className: index_module_default.title,
             children: [
-              "Hello ICE 311 Date: ",
+              "Hello ICE 3 Date: ",
               data == null ? void 0 : data.date
             ]
           })

@@ -8,12 +8,13 @@ export async function bootstrap() {
   const app = express();
 
   const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+  console.log('__dirname', __dirname)
 
   let ice
   try {
-    ice = await import(path.join(__dirname, "./public/server/index.mjs"));
+    ice = await import(path.join(__dirname, "../public/server/index.mjs"));
   } catch (error) {
-    ice = require(path.join(__dirname, "./public/server/index.mjs"));
+    ice = require(path.join(__dirname, "../public/server/index.mjs"));
   }
 
   const port = Number(process.env.PORT || "3000");
