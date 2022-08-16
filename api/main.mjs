@@ -15,7 +15,7 @@ export async function bootstrap() {
   try {
     ice = await import(path.join(__dirname, "../public/server/index.mjs"));
   } catch (error) {
-    ice = require(path.join(__dirname, "../public/server/index.mjs"));
+    ice = require(path.join('/vercel/output/server/index.mjs'));
   }
 
   const port = Number(process.env.PORT || "3000");
